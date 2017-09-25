@@ -12,3 +12,13 @@
 
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>
+<p>
+<strong>Content:</strong> 
+<% @user.microposts.each do |micro|%>
+  <div>
+  <%= micro.content %>
+  <%= link_to 'Edit', edit_micropost_path(micro.user_id) %>
+  <!--<%= link_to 'Delete', edit_micropost_path(@user) %>-->
+ </div>
+  <% end %>
+</p>
